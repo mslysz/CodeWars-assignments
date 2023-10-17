@@ -35,3 +35,23 @@ function solution(str, ending) {
 
 console.log(solution("adg", "dg")); //true
 console.log(solution("lfs", "d")); //false
+
+//Exer 4
+//Consider an array/list of sheep where some sheep may be missing from their place. We need a function that counts the number of sheep present in the array (true means present).
+
+function countSheeps(sheep) {
+  let numbersOfSheeps = 0;
+  sheep.forEach((oneSheep) => {
+    if (oneSheep) {
+      numbersOfSheeps++;
+    }
+  });
+  return numbersOfSheeps;
+}
+
+console.log(countSheeps([true, true, true, false,
+  true, true, true, true,
+  true, false, true, false,
+  true, false, false, true,
+  true, true, true, true,
+  false, false, true, true]))
