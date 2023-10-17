@@ -25,3 +25,13 @@ console.log(areYouPlayingBanjo('Robert'));
 console.log(areYouPlayingBanjo('Martin'))
 console.log(areYouPlayingBanjo('Diana'))
 console.log(areYouPlayingBanjo('renata'))
+
+//Exer 3
+// Complete the solution so that it returns true if the first argument(string) passed in ends with the 2nd argument (also a string).
+
+function solution(str, ending) {
+  return str.endsWith(ending);
+}
+
+console.log(solution("adg", "dg")); //true
+console.log(solution("lfs", "d")); //false
