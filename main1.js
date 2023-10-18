@@ -67,3 +67,32 @@ function createPhoneNumber(numbers) {
   return format;
 }
 console.log(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]));
+
+//Exer 6
+////Create a function that takes a list of non-negative integers and strings and returns a new list with the strings filtered out.
+
+function filter_list(l) {
+  return l.filter((element) => typeof element !== 'string')
+
+}
+
+console.log(filter_list([1, 2, 'a', 'b']))
+console.log(filter_list([1, 'a', 'b', 0, 15]))
+console.log(filter_list([1, 2, 'aasf', '1', '123', 123]))
+
+// Exer 7
+//you are asked to square every digit of a number and concatenate them.
+//For example, if we run 9119 through the function, 811181 will come out, because 92 is 81 and 12 is 1. (81-1-1-81) 
+
+function squareDigits(num) {
+  const digits = [...num.toString()];
+  const squaredDigits = digits.map(digit => digit ** 2); //The map() method creates a new array with the digits squared.
+  let result = squaredDigits.join('');
+  let numberResult = Number(result)
+  return numberResult
+}
+
+
+console.log(squareDigits(3212));
+console.log(squareDigits(765));
+console.log(squareDigits(0));
