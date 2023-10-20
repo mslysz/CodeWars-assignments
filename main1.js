@@ -96,3 +96,29 @@ function squareDigits(num) {
 console.log(squareDigits(3212));
 console.log(squareDigits(765));
 console.log(squareDigits(0));
+
+//Exer 8 
+//Create a function that takes an integer as an argument and returns "Even" for even numbers or "Odd" for odd numbers.
+
+const evenOrOdd = (number) => number % 2 === 0 ? 'Even' : 'Odd';
+
+console.log(evenOrOdd(5));
+console.log(evenOrOdd(4));
+
+//Exer 9 
+//Write a function which calculates the average of the numbers in a given list.
+//Note: Empty arrays should return 0.
+
+function findAverage(array) {
+  let sum = 0;
+  array.forEach((num) => {
+    sum += num
+  })
+  if (array.length === 0) {
+    return 0
+  }
+  return Number(sum / array.length)
+}
+
+console.log(findAverage([1, 1, 1, 1]));
+console.log(findAverage([1, 2, 3, 4]));
