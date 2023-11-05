@@ -67,3 +67,28 @@ console.log(betterThanAverage([5, 5], 2));
 console.log(betterThanAverage([100, 40, 34, 57, 29, 72, 57, 88], 75));
 console.log(betterThanAverage([12, 23, 34, 45, 56, 67, 78, 89, 90], 9));
 console.log(betterThanAverage([41, 75, 72, 56, 80, 82, 81, 33], 50));
+
+//Exer 5
+//Create a function that returns the sum of the two lowest positive numbers given an array of minimum 4 positive integers. No floats or non-positive integers will be passed.
+
+
+function sumTwoSmallestNumbers(numbers) {
+  let min = Infinity;
+  let min2 = Infinity;
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] < min) {
+      min2 = min;
+      min = numbers[i];
+    } else if (numbers[i] < min2) {
+      min2 = numbers[i];
+    }
+  } return min + min2
+}
+
+//Another solution
+// function sumTwoSmallestNumbers(numbers) {
+// numbers = numbers.sort((a, b) => a - b);
+//   return numbers[0] + numbers[1];
+// }
+
+console.log(sumTwoSmallestNumbers([19, 5, 42, 2, 77]));
