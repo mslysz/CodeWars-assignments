@@ -122,3 +122,53 @@ function findAverage(array) {
 
 console.log(findAverage([1, 1, 1, 1]));
 console.log(findAverage([1, 2, 3, 4]));
+
+//Exer 10
+//Return the number (count) of vowels in the given string.
+//We will consider a, e, i, o, u as vowels (but not y).
+//The input string will only consist of lower case letters and/or spaces.
+
+function getCount(str) {
+  let count = 0;
+  let letters = ["a", "e", "i", "o", "u"];
+  for (let i = 0; i < str.length; i++) {
+    for (let j = 0; j < letters.length; j++) {
+      if (str[i] === letters[j]) {
+        count++
+      }
+    }
+  }
+
+  return count;
+}
+console.log(getCount("rabalatksdad"))
+
+//Exer 11
+//Given an array of integers as strings and numbers, return the sum of the array values as if all were numbers.
+//Return your answer as a number.
+
+function sumMix(x) {
+  let sum = 0;
+  x.forEach((element) => {
+    sum += Number(element)
+  })
+  console.log(sum)
+  return sum
+}
+
+sumMix([9, 3, '7', '3']);
+sumMix(['5', '0', 9, 3, 2, 1, '9', 6, 7]);
+sumMix(['3', 6, 6, 0, '5', 8, 5, '6', 2, '0']);
+
+//Exer 12
+//Your task is to make a function that can take any non-negative integer as an argument and return it with its digits in descending order. Essentially, rearrange the digits to create the highest possible number.
+
+function descendingOrder(n) {
+  let newOrder = n.toString().split('').sort((a, b) => { return b - a }).join('');
+  return +newOrder;
+}
+
+
+console.log(descendingOrder(42145));
+console.log(descendingOrder(145263));
+console.log(descendingOrder(123456789));
