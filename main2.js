@@ -48,3 +48,22 @@ function digitize(n) {
 
 console.log(digitize(35231))
 console.log(digitize(0))
+
+
+//Exer 4
+//here was a test in your class and you passed it. Congratulations!
+//But you're an ambitious person. You want to know if you're better than the average student in your class.
+//You receive an array with your peers' test scores. Now calculate the average and compare your score!
+//Return True if you're better, else False!
+
+function betterThanAverage(classPoints, yourPoints) {
+  let sum = classPoints.reduce((a, b) => a + b, 0)
+  let average = sum / classPoints.length;
+  return average < yourPoints ? true : false;
+}
+
+console.log(betterThanAverage([2, 3], 5));
+console.log(betterThanAverage([5, 5], 2));
+console.log(betterThanAverage([100, 40, 34, 57, 29, 72, 57, 88], 75));
+console.log(betterThanAverage([12, 23, 34, 45, 56, 67, 78, 89, 90], 9));
+console.log(betterThanAverage([41, 75, 72, 56, 80, 82, 81, 33], 50));
