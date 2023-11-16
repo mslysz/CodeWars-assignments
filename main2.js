@@ -1,4 +1,4 @@
-//Exer 1 
+//Exer 1
 //Deoxyribonucleic acid, DNA is the primary information storage molecule in biological systems. It is composed of four nucleic acid bases Guanine ('G'), Cytosine ('C'), Adenine ('A'), and Thymine ('T').
 //Ribonucleic acid, RNA, is the primary messenger molecule in cells. RNA differs slightly from DNA its chemical structure and contains no Thymine. In RNA Thymine is replaced by another nucleic acid Uracil ('U').
 //Create a function which translates a given DNA string into RNA.
@@ -6,37 +6,36 @@
 function DNAtoRNA(dna) {
   let rna = [];
   dna.split('').forEach((element) => {
-    if (element === "T") {
-      rna.push("U");
+    if (element === 'T') {
+      rna.push('U');
     } else rna.push(element);
-  })
-  return rna.join('')
+  });
+  return rna.join('');
 }
 //Another solution
 // function DNAtoRNA(dna) {
 //   return dna.replace("T", "U")
 // }
 
-console.log(DNAtoRNA("TTTT"));
-console.log(DNAtoRNA("TGACCCCA"));
-console.log(DNAtoRNA("AGGGGCACCGC"));
-console.log(DNAtoRNA("ATTCGATG"));
+console.log(DNAtoRNA('TTTT'));
+console.log(DNAtoRNA('TGACCCCA'));
+console.log(DNAtoRNA('AGGGGCACCGC'));
+console.log(DNAtoRNA('ATTCGATG'));
 
-//Exer 2 
+//Exer 2
 //Given a string, you have to return a string in which each character (case-sensitive) is repeated once.
 
 function doubleChar(str) {
-  let doubledChars = str.split('').map((element) => element.repeat(2))
-  return doubledChars.join('')
+  let doubledChars = str.split('').map((element) => element.repeat(2));
+  return doubledChars.join('');
 }
 //Another solution
 
 // function doubleChar(str) {
 //   return str.split('').map(c => c + c).join('');
 // }
-console.log(doubleChar("str"))
-console.log(doubleChar("pink"))
-
+console.log(doubleChar('str'));
+console.log(doubleChar('pink'));
 
 //Exer 3
 //Convert number to reversed array of digits
@@ -46,9 +45,8 @@ function digitize(n) {
   return String(n).split('').map(Number).reverse();
 }
 
-console.log(digitize(35231))
-console.log(digitize(0))
-
+console.log(digitize(35231));
+console.log(digitize(0));
 
 //Exer 4
 //here was a test in your class and you passed it. Congratulations!
@@ -57,7 +55,7 @@ console.log(digitize(0))
 //Return True if you're better, else False!
 
 function betterThanAverage(classPoints, yourPoints) {
-  let sum = classPoints.reduce((a, b) => a + b, 0)
+  let sum = classPoints.reduce((a, b) => a + b, 0);
   let average = sum / classPoints.length;
   return average < yourPoints ? true : false;
 }
@@ -71,7 +69,6 @@ console.log(betterThanAverage([41, 75, 72, 56, 80, 82, 81, 33], 50));
 //Exer 5
 //Create a function that returns the sum of the two lowest positive numbers given an array of minimum 4 positive integers. No floats or non-positive integers will be passed.
 
-
 function sumTwoSmallestNumbers(numbers) {
   let min = Infinity;
   let min2 = Infinity;
@@ -82,7 +79,8 @@ function sumTwoSmallestNumbers(numbers) {
     } else if (numbers[i] < min2) {
       min2 = numbers[i];
     }
-  } return min + min2
+  }
+  return min + min2;
 }
 
 //Another solution
@@ -92,3 +90,19 @@ function sumTwoSmallestNumbers(numbers) {
 // }
 
 console.log(sumTwoSmallestNumbers([19, 5, 42, 2, 77]));
+
+//Exer 6
+//You are going to be given a word. Your job is to return the middle character of the word. If the word's length is odd, return the middle character. If the word's length is even, return the middle 2 characters.
+
+function getMiddle(s) {
+  for (let i = 0; i < s.length; i++) {
+    if (s.length % 2 === 0) {
+      return s[s.length / 2 - 1] + s[s.length / 2];
+    } else {
+      return s[s.length / 2 - 0.5];
+    }
+  }
+}
+
+console.log(getMiddle('test'));
+console.log(getMiddle('testing'));
