@@ -106,3 +106,14 @@ function getMiddle(s) {
 
 console.log(getMiddle('test'));
 console.log(getMiddle('testing'));
+
+//Exer 7
+//Complete the function that accepts a string parameter, and reverses each word in the string. All spaces in the string should be retained.
+
+function reverseWords(str) {
+  const words = str.split(' ');
+  const reverseArray = words.map((word) => word.split('').reverse().join(''));
+  return reverseArray.join(' ');
+}
+
+console.log(reverseWords('This is an example!'));
