@@ -117,3 +117,49 @@ function reverseWords(str) {
 }
 
 console.log(reverseWords('This is an example!'));
+
+//Exer 8
+//The main idea is to count all the occurring characters in a string. If you have a string like aba, then the result should be {'a': 2, 'b': 1}.
+//What if the string is empty? Then the result should be empty object literal, {}.
+
+function count(string) {
+  const result = {};
+  for (i = 0; i < string.length; i++) {
+    const letter = string[i];
+    if (result[letter]) {
+      result[letter]++;
+    } else {
+      result[letter] = 1;
+    }
+  }
+  return result;
+}
+
+console.log(count('aba'));
+
+//Exer 9
+//Write a function that when given a URL as a string, parses out just the domain name and returns it as a string.
+
+function domainName(url) {
+  const domain = url.match(
+    /^(?:https?:\/\/)?(?:[^@\n]+@)?(?:www\.)?([^:\/\n]+)/im
+  )[1];
+  return domain.split('.')[0];
+}
+
+//Another solution
+
+// function domainName(url) {
+//   url = url.replace('http://', '');
+//   url = url.replace('https://', '');
+//   url = url.replace('www.', '');
+//   return url.split('.')[0];
+// }
+
+console.log(domainName('http://google.co.jp'));
+console.log(domainName('http://www.google.com'));
+console.log(
+  domainName(
+    'https://github.com/mslysz/CodeWars-assignments/blob/main/main2.js'
+  )
+);
