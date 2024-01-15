@@ -221,3 +221,16 @@ const sumNumbers = (number) => {
   return arrayOfDigits.reduce((a, b) => a + b);
 };
 console.log(sumNumbers(123));
+
+//Exer 13
+// Remove Duplicates from Array.
+//Create a function that takes an array as input and returns a new array with duplicate elements removed.
+
+const deleteDuplicate = (array) => {
+  const mySet = new Set(); //creates a new object that automatically removes duplicates
+  for (let i = 0; i < array.length; i++) {
+    mySet.add(array[i]);
+  }
+  return Array.from(mySet);
+};
+console.log(deleteDuplicate([1, 2, 2, 3, 4, 4, 5]));
