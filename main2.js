@@ -210,3 +210,14 @@ const rps = (p1, p2) => {
 console.log(rps('paper', 'scissors'));
 console.log(rps('scissors', 'rock'));
 console.log(rps('paper', 'paper'));
+
+//Exer 12
+//Sum of Digits
+//Write a function that takes an integer and returns the sum of its digits. For example, for the number 123, the sum of its digits is 6 (1 + 2 + 3).
+
+const sumNumbers = (number) => {
+  const arrayOfDigits = Array.from(String(number), Number);
+  console.log(arrayOfDigits);
+  return arrayOfDigits.reduce((a, b) => a + b);
+};
+console.log(sumNumbers(123));
