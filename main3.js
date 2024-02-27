@@ -100,7 +100,7 @@ console.log(likes(['Peter']));
 console.log(likes(['Jacob', 'Alex']));
 console.log(likes(['Max', 'John', 'Mark']));
 console.log(likes(['Max', 'John', 'Mark', 'Max']));
-
+//Exer 6
 //Write a function findNeedle() that takes an array full of junk but containing one "needle"
 //After your function finds the needle it should return a message (as a string) that says:
 //"found the needle at position " plus the index it found the needle, so:
@@ -111,3 +111,15 @@ const findNeedle = (haystack) =>
 console.log(
   findNeedle(['hay', 'junk', 'hay', 'hay', 'moreJunk', 'needle', 'randomJunk'])
 );
+
+//Exer 7
+//Create a method to see whether the string is ALL CAPS.
+
+String.prototype.isUpperCase = function () {
+  for (let i = 0; i < this.length; i++) {
+    if (this[i] !== this[i].toUpperCase()) {
+      return false;
+    }
+  }
+  return true;
+};
